@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div  class="container">   
+<h1>login page</h1>
+<div class="input-box">
+<input type="email" name="" id="email" class="input" placeholder="email">
+</div>
+<div class="input-box">
+<input type="password" name="" id="password" class="input" placeholder="password">
+</div>
+<button onclick="login()" id="btn">login up</button>
+</div>
+<script>
+    function login(){
+        var email = document.getElementById("email").value
+        var password = document.getElementById("password").value
+        if (email == localStorage.getItem("email") && password == localStorage.getItem("password")){
+            window.location.href = "main.html"
+        }else if (email == "" ){
+            alert("please enter your email")
+        }else if (password == ""){
+            alert("please enter your password")
+        }
+        else if (password != localStorage.getItem("password")){
+            alert("please write the correct password")
+        }else if (email != localStorage.getItem("email")) {
+          alert("please write the correct email")
+        }
+    }
+    
+</script>
+</body>
+</html>
